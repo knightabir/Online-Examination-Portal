@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-action-list class="sidebar">
+        <div mat-subheader class="text-center">Menu</div>
+        <button mat-list-item routerLink="/dashboard/0">
+            <mat-icon mat-list-icon> home</mat-icon> Home
+        </button>
+        <button mat-list-item routerLink="">
+            <mat-icon mat-list-icon>account_circle</mat-icon> Profile
+        </button>
+        <button [routerLink]="'/dashboard/'+c.cid" mat-list-item *ngFor="let c of category">
+            <mat-icon mat-list-icon>bolt</mat-icon>{{c.title}}
+        </button>
+    </mat-action-list>
+</mat-card>
+  
+<!-- {{category | json}} -->

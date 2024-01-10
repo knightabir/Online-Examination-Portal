@@ -1,0 +1,49 @@
+/* quiz-form.component.css */
+
+.full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .width50 {
+    width: 48%;
+    margin-bottom: 15px;
+  }
+  
+  /* add-quiz.component.css */
+  
+  .quiz-card {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quiz-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .width50 {
+    width: calc(50% - 5px); /* Adjust as needed */
+  }
+  
+  .width100 {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .form-row {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .publish-status {
+    width: 100%;
+  }
+  

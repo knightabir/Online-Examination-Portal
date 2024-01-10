@@ -1,0 +1,64 @@
+/* profile.component.css */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header {
+  margin-bottom: 20px;
+}
+
+.profile-table-container {
+  overflow-x: auto;
+  margin-top: 10px;
+  width: 50%; /* Adjust the width as needed */
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 1px solid #ccc; */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(20, 1, 1, 0.1); /* Add a subtle box shadow for a boxed appearance */
+}
+
+.profile-table {
+  width: 100%;
+}
+
+
+.username{
+  padding-top: 60px;
+  font-size: 50px;
+}
+
+.profile-image{
+  max-height: 200px;
+  max-width: 200pc;
+  border-radius: 50%;
+}
+
+/* profile.component.css */
+
+/* profile.component.css */
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-buttons button {
+  min-width: 120px;
+  margin-right: 10px; /* Add space between buttons */
+}
+.mt20{
+  margin-top: 10px;
+  color: white;
+  text-decoration: solid;
+}
+.heading{
+  color: white;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}

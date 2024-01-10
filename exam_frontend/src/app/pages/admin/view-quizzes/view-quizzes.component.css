@@ -1,0 +1,9 @@
+.example-header-image{
+    background-image:url(../../../../assets/quiz\ \(1\).png) ;
+    background-size: cover;
+}
+
+.add{
+    height: 40px;
+    width: 100px;
+}

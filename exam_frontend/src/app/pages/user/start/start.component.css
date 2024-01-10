@@ -1,0 +1,41 @@
+.input {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  text-decoration-color: white;
+}
+
+.question {
+  color: white;
+}
+
+.color-red {
+  color: red;
+}
+
+.result {
+  width: 100%;
+  /* position: absolute; */
+}
+
+/* Add styling to the input tags within .col-md-6 class */
+.col-md-6 input {
+  /* width: 100%; Make the input take up the full width of its container */
+  padding: 10px; /* Add padding for better spacing */
+  margin-bottom: 10px; /* Add margin between input elements */
+  border: 1px solid #ccc; /* Add a border for a clean look */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width/height */
+}
+
+/* Style the input when it is focused */
+.col-md-6 input:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #2196f3; /* Change the border color when focused */
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.7); /* Add a subtle box-shadow when focused */
+}
+
+.color-white{
+  color: white;
+}

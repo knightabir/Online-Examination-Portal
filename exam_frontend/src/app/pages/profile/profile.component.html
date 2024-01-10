@@ -1,0 +1,39 @@
+<!-- profile.component.html -->
+
+<mat-card class="profile-card">
+    <h2 class="heading">Your Profile Details</h2>
+    
+    <mat-card-content>
+      <div class="profile-container text-center">
+        <div class="profile-header">
+          <img class="profile-image"
+            src="https://w7.pngwing.com/pngs/262/672/png-transparent-user-profile-aurangabad-computer-icons-great-value-blue-service-logo.png"
+            alt="profile" />
+          <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1>
+        </div>
+  
+        <div class="profile-table-container">
+          <mat-table *ngIf="dataSource" [dataSource]="dataSource" class="profile-table">
+            <ng-container matColumnDef="label">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.label }}</mat-cell>
+            </ng-container>
+  
+            <ng-container matColumnDef="value">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.value }}</mat-cell>
+            </ng-container>
+  
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+          </mat-table>
+        </div>
+  
+        <div class="profile-buttons mt20">
+          <button mat-raised-button color="primary">Update</button>
+          <button mat-raised-button color="accent">Share</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

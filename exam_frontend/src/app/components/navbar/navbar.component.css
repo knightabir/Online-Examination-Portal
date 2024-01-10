@@ -1,0 +1,42 @@
+/* navbar.component.css */
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.example-icon {
+  color: white;
+  font-size: 15px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.favorite-icon {
+  color: white;
+}
+
+mat-toolbar {
+  background: linear-gradient(to right, #007bff, #0056b3);
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden; /* Ensure that the actions stay within the navbar */
+}
+
+
+.logout{
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,0 +1,19 @@
+.full-width{
+  width: 94%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.button-all {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+
+.heading {
+  color: #f8edff;
+  text-decoration: none;
+}
+
+
+.width-50{
+    width: 50%;
+}
