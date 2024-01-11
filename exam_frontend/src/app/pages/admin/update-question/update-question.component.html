@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper text-white">
   <div class="row mt20">
     <div class="col-md-12">
       <h1>Update the Question</h1>
@@ -11,7 +11,7 @@
           <!-- Debugging: Display JSON representation of 'question.content' -->
           <!-- {{ question.content | json }} -->
           <mat-card-subtitle>
-            Enter Details of the new question
+            Enter Details to update the question
           </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
@@ -21,20 +21,14 @@
               <mat-form-field class="w100">
                 <mat-label>Write Question</mat-label>
 
-                <!-- <textarea
+                <textarea
                   name="content"
                   [(ngModel)]="question.content"
                   rows="8"
                   matInput
                   required
                   placeholder="Write your question"
-                ></textarea> -->
-<!-- 
-                <ckeditor
-                  data="<p>Hello, world!</p>"
-                  name="content"
-                  [(ngModel)]="question.content"
-                ></ckeditor> -->
+                ></textarea>
               </mat-form-field>
 
               <!-- Options -->
@@ -44,7 +38,7 @@
                   <mat-form-field class="w100">
                     <mat-label>Enter First Option</mat-label>
                     <textarea
-                      name="Option1"
+                      name="option1"
                       [(ngModel)]="question.option1"
                       rows="3"
                       required
@@ -74,7 +68,7 @@
                   <mat-form-field class="w100">
                     <mat-label>Enter Third Option</mat-label>
                     <textarea
-                      name="Option3"
+                      name="option3"
                       [(ngModel)]="question.option3"
                       rows="3"
                       matInput
@@ -88,7 +82,7 @@
                   <mat-form-field class="w100">
                     <mat-label>Enter Fourth Option</mat-label>
                     <textarea
-                      name="options4"
+                      name="option4"
                       [(ngModel)]="question.option4"
                       rows="3"
                       matInput
