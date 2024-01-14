@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2'; // Import SweetAlert2
+import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css',
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  constructor(private userService: UserService, private snak: MatSnackBar) {}
+  constructor(private userService: UserService) {}
 
   public user = {
     username: '',
@@ -17,51 +18,66 @@ export class SignupComponent implements OnInit {
     lastName: '',
     email: '',
     phone: '',
+    confirmPassword: '',
   };
 
   ngOnInit(): void {}
 
   formSubmit() {
-    console.log(this.user);
-    if (
-      this.user.username == '' ||
-      this.user.username == null ||
-      this.user.email == '' ||
-      this.user.email == null ||
-      this.user.firstName == '' ||
-      this.user.firstName == null ||
-      this.user.lastName == '' ||
-      this.user.lastName == null ||
-      this.user.phone == '' ||
-      this.user.phone == null ||
-      this.user.password == '' ||
-      this.user.password == null
-    ) {
-      this.snak.open('Data is not valid. ', 'Ok', {
-        duration: 3000,
-      });
+    if (this.isFormInvalid()) {
+      this.showSweetAlert('Data is not valid.', 'error');
       return;
     }
 
-    //add user: userservice
     this.userService.addUser(this.user).subscribe(
       (data) => {
-        //success
         console.log(data);
-        this.snak.open('User registration Successful', 'Ok', {
-          duration: 3000,
-        });
+        this.showSweetAlert('User registration Successful', 'success');
       },
       (error) => {
-        //error
         console.log(error);
-        // alert("something went wrong");
-        this.snak.open('Something went wrong!', 'Ok', {
-          duration: 2000,
-        });
-
-        // Swal.fire("Something Went Wrong")
+        this.showSweetAlert('Something went wrong!', 'error');
       }
     );
+  }
+
+  confirmPasswordInput: any;
+  matcher = new MyErrorStateMatcher();
+
+  onConfirmPasswordInput(confirmPasswordInput: any): void {
+    this.confirmPasswordInput = confirmPasswordInput;
+  }
+
+  // Function to check if the form is invalid
+  private isFormInvalid(): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneRegex = /^[6-9]\d{9}$/; // Indian phone number format
+
+    return (
+      !this.user.username ||
+      !this.user.email || !emailRegex.test(this.user.email) ||
+      !this.user.firstName ||
+      !this.user.lastName ||
+      !this.user.phone || !phoneRegex.test(this.user.phone) ||
+      !this.user.password ||
+      !this.user.confirmPassword ||
+      this.user.password !== this.user.confirmPassword
+    );
+  }
+
+  // Function to show SweetAlert messages
+  private showSweetAlert(message: string, type: 'success' | 'error' | 'warning' | 'info' | 'question') {
+    Swal.fire({
+      title: message,
+      icon: type,
+      timer: 3000,
+      showConfirmButton: false,
+    });
+  }
+}
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control:any, form:any): boolean {
+    return control && control.invalid && (control.dirty || control.touched);
   }
 }
